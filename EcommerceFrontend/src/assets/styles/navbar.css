@@ -1,0 +1,118 @@
+/* Base styles - your existing code remains */
+.navbar-container {
+  background-color: #111;
+  padding: 0;
+  width: 85%;
+  margin: 0 auto;
+}
+
+.main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  background: #111;
+  flex-wrap: wrap; /* prevent overflow */
+}
+
+.menu-item {
+  position: relative; /* required for absolute submenu */
+  padding: 15px 70px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.menu-item:hover {
+  background: #222;
+}
+
+/* First level submenu */
+.submenu {
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  position: absolute;     /* dropdown instead of pushing navbar */
+  top: 100%;              /* directly below parent */
+  left: 0;
+  min-width: 220px;
+  background: #0077c8;
+  display: none;          /* hidden by default */
+  flex-direction: column;
+  z-index: 1000;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+}
+
+.menu-item.active > .submenu {
+  display: flex;          /* show when parent active */
+}
+
+/* Submenu item */
+.submenu-item {
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  position: relative;     /* needed for nested submenu */
+}
+
+.submenu-item:hover {
+  background: #005fa3;
+}
+
+/* Nested submenu */
+.nested-submenu {
+   background: #0088dd;
+  color: white;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  left: 100%;             /* appear to the right */
+  min-width: 220px;
+  display: none;          /* hidden by default */
+  flex-direction: column;
+  z-index: 1001;          /* above submenu */
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.15);
+}
+
+.submenu-item.active > .nested-submenu {
+  display: flex;
+}
+
+/* Links inside nested submenu */
+.nested-submenu li {
+  padding: 8px 20px;
+ 
+}
+
+
+
+.nested-submenu li a {
+  color: white;              /* force link text white */
+  text-decoration: none;     /* remove underline */
+  display: block;            /* make full clickable area */
+}
+
+.nested-submenu li a:hover {
+  background: #006bb3;       /* darker blue on hover */
+  color: #fff;               /* keep text white */
+}
+
+/* Add arrow ► for submenu items that have nested submenu */
+.submenu-item span::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+}
+
+.submenu-item.active > span::after,
+.submenu-item:hover > span::after {
+  content: "▶"; /* arrow to the right */
+}

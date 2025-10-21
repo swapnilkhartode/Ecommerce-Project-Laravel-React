@@ -1,0 +1,42 @@
+/* src/assets/styles/login.css */
+.login-card {
+  background-color: #fff;
+  border-radius: 15px;
+  border: 1px solid #f0f0f0;
+}
+
+.login-title {
+  font-weight: 700;
+  color: black;
+}
+
+.custom-input {
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.login-button {
+  background-color: black;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  padding: 10px;
+}
+
+.login-button:hover {
+  background-color: #0052cc;
+}
+
+.forgot-link {
+  color: black;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.forgot-link:hover {
+  text-decoration: underline;
+}
+
+

@@ -1,0 +1,29 @@
+
+/* Custom utilities not in Bootstrap */
+.w-80 {
+  width: 86%;
+}
+
+.vh-80 {
+  height: 50vh;
+}
+
+.object-fit-cover {
+  object-fit: cover;
+}
+.banner {
+  background: url('/images/banner.jpg') no-repeat center center/cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+.banner-content p {
+  font-size: 18px;
+  margin: 15px 0;
+
+}
